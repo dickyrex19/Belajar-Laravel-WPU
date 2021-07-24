@@ -1,6 +1,10 @@
 @extends('layouts.main')
 @section('container')
-  <h2 class="mb-4">Halaman Blog Posts</h2>
+  <div class="mb-4 d-flex justify-content-between">
+    <h2>All Blog Posts</h2>
+    <a href="/categories"><h4>See All Category</h4></a>
+  </div>
+
   @foreach ($posts as $post)
   <article>
     <h3>
