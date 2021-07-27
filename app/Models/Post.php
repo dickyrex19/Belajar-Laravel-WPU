@@ -19,4 +19,9 @@ class Post extends Model
         // relasinya yaitu 1 post dimiliki oleh 1 category
         return $this->belongsTo(Category::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
