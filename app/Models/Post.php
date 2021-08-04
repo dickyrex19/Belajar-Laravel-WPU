@@ -13,6 +13,7 @@ class Post extends Model
     // fillable untuk memvalidasi fill yang boleh diisi
     // guarded untuk memvalidasi fill yang tidak boleh diisi
     protected $guarded = ['id'];
+    protected $with = ['category', 'author'];
 
     public function category()
     {
