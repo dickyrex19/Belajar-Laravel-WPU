@@ -25,8 +25,12 @@ class PostController extends Controller
             "title" => "All Posts" . $title,
             // "posts" => Post::all()
             // "posts" => Post::with(['category', 'author'])->latest()->get()  sudah dihandle oleh model post
+            // "posts" => Post::latest()
+            //     ->filter(request(['search', 'category', 'author']))
+            //     ->paginate(7)->withQueryString()
             "posts" => Post::latest()
-                ->filter(request(['search', 'category', 'author']))
+                ->searching(request(['search']))
+                ->categoryauthor(request(['category', 'author']))
                 ->paginate(7)->withQueryString()
         ]);
     }
